@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div id="counter"></div>
+    <button id="btn">click here</button>
+    <button id="stop" onclick="stop()">stop</button>
+</body>
+<script>
+    var i=0;
+    document.getElementById('btn').addEventListener("click",counter);
+
+    function counter(){
+        document.getElementById('counter').innerHTML=i;
+        i++;
+    }
+    
+    document.getElementById('counter').addEventListener("mouseenter",colorred);
+    function colorred(){
+         document.getElementById('counter').style.color="red";
+    }
+    document.getElementById('counter').addEventListener("mouseleave",colorblack);
+    function colorblack(){
+         document.getElementById('counter').style.color="black";
+    }
+    function stop(){
+        document.getElementById('btn').removeEventListener("click",counter);
+    }
+
+</script>
+</html>
